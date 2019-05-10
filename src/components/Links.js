@@ -1,9 +1,13 @@
-import React, { useEffect } from "react";
+import React from "react";
+import { addCore } from "../redux/actions";
+import { connect } from "react-redux";
 
-const Links = ({ semester }) => {
-	useEffect(() => {});
+const Links = ({ semester, addCore }) => {
+	const loadLinks = (e) => {
+		addCore(e.target.innerHTML);
+	};
 
-	const  std = () => {
+	const std = () => {
 		switch (semester) {
 			case "semester-1":
 				return {
@@ -27,8 +31,8 @@ const Links = ({ semester }) => {
 					a: "c5",
 					b: "c6",
 					c: "c7",
-                    d: "GEIII",
-                    e:'GK'
+					d: "GEIII",
+					e: "GK",
 				};
 			case "semester-4":
 				return {
@@ -36,8 +40,8 @@ const Links = ({ semester }) => {
 					a: "c8",
 					b: "c9",
 					c: "c10",
-                    d: "GEIV",
-                    e:'PD'
+					d: "GEIV",
+					e: "PD",
 				};
 			case "semester-5":
 				return {
@@ -69,20 +73,35 @@ const Links = ({ semester }) => {
 							{std().sem}
 						</span>
 						<div className='col'>
-							<span className='badge badge-pill badge-primary'>
+							<span
+								className='badge badge-pill badge-primary'
+								onClick={loadLinks}
+							>
 								{std().a}
 							</span>
-							<span className='badge badge-pill badge-secondary '>
+							<span
+								className='badge badge-pill badge-secondary '
+								onClick={loadLinks}
+							>
 								{std().b}
 							</span>
-							<span className='badge badge-pill badge-success '>
+							<span
+								className='badge badge-pill badge-success'
+								onClick={loadLinks}
+							>
 								{std().c}
 							</span>
-							<span className='badge badge-pill badge-danger '>
+							<span
+								className='badge badge-pill badge-danger'
+								onClick={loadLinks}
+							>
 								{std().d}
 							</span>
-							<span className='badge badge-pill badge-danger '>
-                                {std().e == null?null : std().e }
+							<span
+								className='badge badge-pill badge-danger'
+								onClick={loadLinks}
+							>
+								{std().e == null ? null : std().e}
 							</span>
 						</div>
 						<div className='col'>
@@ -138,4 +157,7 @@ const Links = ({ semester }) => {
 	);
 };
 
-export default Links;
+export default connect(
+	null,
+	{ addCore }
+)(Links);

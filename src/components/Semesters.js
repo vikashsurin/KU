@@ -21,7 +21,6 @@ const Semesters = () => {
 						<span className='list-group-item list-group-item-action'>
 							<Link to='/semester/semester-5'>SEMESTER-5</Link>
 						</span>
-
 						<span className='list-group-item list-group-item-action '>
 							<Link to='/semester/semester-6'>SEMESTER-6</Link>
 						</span>

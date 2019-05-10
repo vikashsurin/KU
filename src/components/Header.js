@@ -27,7 +27,10 @@ const Header = () => {
 							</span>
 						</li>
 						<li className='nav-item'>
-							<a className='nav-link' href='###'>
+							<a
+								className='nav-link'
+								href='https://drive.google.com/open?id=1uKdMYlGBxGCahjvdG-r_a1HIcMDEvvw9'
+							>
 								Syllabus
 							</a>
 						</li>
