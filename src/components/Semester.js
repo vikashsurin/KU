@@ -6,8 +6,8 @@ const Semester = (props) => {
 	return (
 		<div className='container'>
 			<Links semester={props.match.params.semester} />
-			<CoreLinks />
 			<hr />
+			<CoreLinks />
 		</div>
 	);
 };
